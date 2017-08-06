@@ -1,0 +1,271 @@
+@import 'header-footer-style';
+
+
+$mainColor: #d3135a;
+$darkestColor: #4d4d4d;
+$lightestColor: white;
+$headerFont: TimesNewRoman, "Times New Roman", serif;
+$mainFont: "Trebuchet MS", sans-serif;
+$mainGap: 20px;
+$mainPadding: 0 6vw;
+$width: 1000px;
+$break-small: 500px;
+$break-m: 624px;
+$break-large: 800px;
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: $mainFont;
+  color: $darkestColor;
+  width: 100%;
+  background: lighten($darkestColor, 60%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-x: hidden;
+  padding: $mainPadding;
+
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  h1, h2, {
+    font-family: $headerFont;
+    color: black;
+    padding-bottom: $mainGap/2;
+  }
+
+  h1 {font-size: 38px; line-height: 38px;}
+  h2 {font-size: 24px;}
+
+
+
+  .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 4vh;
+    max-width: $width;
+    @media screen and (max-width: $break-large) {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+    }
+
+    main {
+      width: 65%;
+      @media screen and (max-width: $break-large) {
+        width: 100%;
+      }
+
+      article {
+        background: $lightestColor;
+        padding: $mainGap;
+      }
+
+      .article-group {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        margin-top: $mainGap;
+        @media screen and (max-width: $break-small) {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+        }
+
+        .lite {
+          width: 48%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+          @media screen and (max-width: $break-small) {
+            width: 100%;
+            margin-bottom: $mainGap;
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+
+            a{
+              color: blue;
+            }
+
+            a:hover {
+              color: black;
+            }
+
+            hr {
+              margin: 9px 0;
+              @media screen and (max-width: $break-m) {
+                margin: 12px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    aside {
+      width: 35%;
+      padding: 0 $mainGap;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      @media screen and (max-width: $break-large) {
+        width: 100%;
+        padding-top: $mainGap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        padding: $mainGap 0;
+        @media screen and (max-width: $break-small) {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+        }
+
+      }
+
+      .sidebar {
+        padding-bottom: $mainGap;
+        @media screen and (max-width: $break-large) {
+          width: 48%;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: row;
+                  flex-direction: row;
+        }
+        @media screen and (max-width: $break-small) {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          width: 100%;
+        }
+
+        h2 {
+            border-bottom: 3px solid black;
+            margin-bottom: $mainGap/2;
+        }
+      }
+
+      form {
+        @media screen and (max-width: $break-large) {
+          width: 48%;
+        }
+        @media screen and (max-width: $break-small) {
+          width: 100%;
+        }
+      }
+
+      fieldset {
+          padding: $mainGap;
+
+          .warning {
+            font-size: 12px;
+            color: black;
+            display: inline-block;
+            text-align: right;
+            width: 100%;
+            margin-bottom: $mainGap/2;
+            display: inline-block;
+          }
+
+          label {
+            color: black;
+          }
+
+          input {
+            width: 100%;
+            padding: 10px 5px;
+            margin-top: $mainGap/3;
+          }
+          textarea {
+            width: 100%;
+            margin-top: $mainGap/3;
+          }
+
+          .button {
+            background: $mainColor;
+            padding: 10px 20px;
+            border: none;
+            color: $lightestColor;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+          }
+      }
+    }
+  }
+
+  .bottom {
+    background: lighten($darkestColor,50%);
+    padding: $mainGap;
+    margin-top: $mainGap;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 0;
+    max-width: $width;
+    @media screen and (max-width: $break-m){
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+    }
+
+    p {
+      margin-right: $mainGap;
+    }
+    p:not(:last-child) {
+      @media screen and (max-width: $break-m){
+        padding-bottom: $mainGap/2;
+      }
+    }
+  }
+}
